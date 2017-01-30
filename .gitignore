@@ -177,4 +177,5 @@ fabric.properties
 # *.ipr
 
 # End of https://www.gitignore.io/api/macos,haskell,ruby,windows,jetbrains
-/Homework01/fibonacci
+Homework01/fibonacci
+cs372p1/.idea/*
