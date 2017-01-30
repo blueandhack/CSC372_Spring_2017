@@ -179,3 +179,4 @@ fabric.properties
 # End of https://www.gitignore.io/api/macos,haskell,ruby,windows,jetbrains
 Homework01/fibonacci
 cs372p1/.idea/*
+/cs372p1/words.txt
