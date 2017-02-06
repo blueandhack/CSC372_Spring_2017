@@ -2,6 +2,7 @@ def insertion_sort(array)
   (1..array.length).each do |index|
     temp = array[index]
   end
+  array
 end
 
 target_filename= ARGV[0]
