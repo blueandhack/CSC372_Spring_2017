@@ -1,7 +1,7 @@
 require_relative 'clock'
 require_relative 'alarmclock'
 
-cc = Clock.new 17, 59
+cc = Clock.new 23, 59
 
 puts cc.gethour
 

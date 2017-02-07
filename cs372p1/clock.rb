@@ -43,7 +43,7 @@ class Clock
     if hour<10
 
     else
-
+    puts hour%10
     end
 
   end
