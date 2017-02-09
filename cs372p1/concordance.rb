@@ -25,11 +25,18 @@ while (line = file.gets)
   i+=1
 end
 
-hash = hash.sort_by { |key| key }
 
-get_long = hash.sort.to_h.keys[0].length
+total_keys = hash.keys
 
-hash.each do |key, value|
+get_long = 0
+
+total_keys.each do |v|
+  if get_long< v.length
+    get_long = v.length
+  end
+end
+
+hash.sort.each do |key, value|
   v = '%'+get_long.to_s+'s'
   printf v, key
   value.each do |cool|
