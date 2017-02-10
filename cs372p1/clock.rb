@@ -1,13 +1,59 @@
+################################################################
+#
+#   CSC 372 Spring 2017 - Project 01
+#
+#   Author: Yujia Lin
+#
+#   Instructor: McCann
+#
+#   Filename: clock.rb
+#
+################################################################
+
+# This file contains the definition of the class Clock.
 class Clock
 
-  def initialize (hour, minute)
+  # Constructor
+  # @param hour:hour, minute:minute
+  #
+  def initialize (hour=0, minute=0)
+    if hour>23
+      hour = 23
+    end
+    if hour<0
+      hour= 0
+    end
+
+    if minute>59
+      minute=59
+    end
+    if minute<0
+      minute=0
+    end
     @time = Time.new 2017, 2, 6, hour, minute
   end
 
+  # Setter method
+  # @param h:hour, m:minute
+  #
   def settime(h, m)
+    if h>23
+      h = 23
+    end
+    if h<0
+      h= 0
+    end
+
+    if m>59
+      m=59
+    end
+    if m<0
+      m=0
+    end
     @time = Time.new 2017, 2, 6, h, m
   end
 
+  # Getter methods
   def gethour
     @time.hour
   end
@@ -16,6 +62,7 @@ class Clock
     @time.min
   end
 
+  # Display digital time
   def formattime
     the_time = []
 
@@ -79,6 +126,7 @@ class Clock
     end
 
     printf '%s', str
+    str
 
   end
 

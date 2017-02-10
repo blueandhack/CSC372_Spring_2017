@@ -1,3 +1,16 @@
+################################################################
+#
+#   CSC 372 Spring 2017 - Project 01
+#
+#   Author: Yujia Lin
+#
+#   Instructor: McCann
+#
+#   Filename: concordance.rb
+#
+################################################################
+
+# The program will record position in a file
 target_filename = ''
 
 if ARGV[0]
@@ -7,10 +20,12 @@ else
   exit 1
 end
 
+# Read file
 file = File.new(target_filename, 'r')
 
 hash = {}
 
+# Get every word then put to hash
 i = 1
 while (line = file.gets)
   line_words = line.split(' ')
@@ -30,12 +45,14 @@ total_keys = hash.keys
 
 get_long = 0
 
+# Get longest word
 total_keys.each do |v|
   if get_long< v.length
     get_long = v.length
   end
 end
 
+# Show results
 hash.sort.each do |key, value|
   v = '%'+get_long.to_s+'s'
   printf v, key
