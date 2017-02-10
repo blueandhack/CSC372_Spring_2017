@@ -21,7 +21,16 @@ known by many names, including the Collatz Conjecture and the Hailstone Sequence
 
 # The program will show Hailstone Sequence
 
+if ARGV.length <1
+  puts 'Usage:  ruby hailstones.rb <number>'
+  exit 1
+end
+
 number = ARGV[0].to_i
+if number < 1
+  puts 'Number >= 1'
+  exit 1
+end
 printf 'The hailstone sequence starting with %d', number
 puts ''
 
@@ -58,4 +67,4 @@ end
 
 puts ''
 puts ''
-print "There are #{count_number+1} values; the largest is #{max}."
+print "There are #{count_number+1} values; the largest is #{max}.\n"

@@ -12,6 +12,12 @@
 
 # The program will sort data from a file
 
+# Check input argument
+if ARGV.length < 1
+  puts 'Usage:  ruby wordsort.rb <filename>'
+  exit 1
+end
+
 # Binary insertion sort
 # It use binary search to find where can insert
 # @param array: an array you want to sort, sort_array: an array you want store sorted element
@@ -52,12 +58,6 @@ def binary_search(array, val)
     end
   end
   index
-end
-
-# Check input argument
-if ARGV.length < 1 && ARGV.length > 1
-  puts 'Usage:  ruby wordsort.rb <filename>'
-  exit 1
 end
 
 target_filename= ARGV[0]
