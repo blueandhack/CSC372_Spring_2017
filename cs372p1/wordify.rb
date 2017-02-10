@@ -9,6 +9,8 @@
 #   Filename: wordify.rb
 #
 ################################################################
+
+# The program will read standard input or a file's content and filter words, then standard output
 str =''
 
 # Check input arguments
@@ -43,6 +45,7 @@ words = str.split(' ')
 
 filter_words = []
 
+# Check every word then filter them
 words.each do |word|
   count = 0
   word.each_char do |char|

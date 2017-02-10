@@ -37,6 +37,7 @@ class Clock
   # @param h:hour, m:minute
   #
   def settime(h, m)
+    # Check range
     if h>23
       h = 23
     end
@@ -63,9 +64,11 @@ class Clock
   end
 
   # Display digital time
+  # @return str: a string will display formatted digital time
   def formattime
     the_time = []
 
+    # AM, PM, white space, colon string store to some arrays
     am = [' _ ', '|_|', '| |']
     pm = [' _ ', '|_|', '|  ']
     space = [' ', ' ', ' ']
@@ -74,6 +77,7 @@ class Clock
     hour = @time.hour
     minute = @time.min
 
+    # Check hour
     mark = 'a'
     if hour>12
       hour = hour-12
@@ -95,6 +99,7 @@ class Clock
 
     the_time << colon
 
+    # Check minute
     if minute >=10
       one = minute.to_s[0].to_i
       two = minute.to_s[1].to_i
@@ -106,6 +111,7 @@ class Clock
       find_number minute, the_time
     end
 
+    # Put white space
     the_time << space
 
     if mark == 'p'
@@ -130,7 +136,10 @@ class Clock
 
   end
 
+  # @param number: which number you want to show, the_time: an array store some numbers
   def find_number(number, the_time)
+
+    # 0 to 9 numbers
     zero = [' _ ', '| |', '|_|']
     one = ['   ', '  |', '  |']
     two = [' _ ', ' _|', '|_ ']
@@ -142,27 +151,28 @@ class Clock
     eight = [' _ ', '|_|', '|_|']
     nine = [' _ ', '|_|', ' _|']
 
-
-    if number == 0
-      the_time<<zero
-    elsif number ==1
-      the_time<<one
-    elsif number ==2
-      the_time<<two
-    elsif number ==3
-      the_time<<three
-    elsif number ==4
-      the_time<<four
-    elsif number ==5
-      the_time<<five
-    elsif number ==6
-      the_time<<six
-    elsif number ==7
-      the_time<<seven
-    elsif number ==8
-      the_time<<eight
-    elsif number ==9
-      the_time<<nine
+    case
+      when number == 0
+        the_time<<zero
+      when number ==1
+        the_time<<one
+      when number ==2
+        the_time<<two
+      when number ==3
+        the_time<<three
+      when number ==4
+        the_time<<four
+      when number ==5
+        the_time<<five
+      when number ==6
+        the_time<<six
+      when number ==7
+        the_time<<seven
+      when number ==8
+        the_time<<eight
+      else
+        number ==9
+        the_time<<nine
     end
     the_time
   end

@@ -44,9 +44,11 @@ class AlarmClock < Clock
   end
 
   # Display digital time
+  # @return str: a string will display formatted digital time
   def formatalarm
     the_time = []
 
+    # AM, PM, white space, colon string store to some arrays
     am = [' _ ', '|_|', '| |']
     pm = [' _ ', '|_|', '|  ']
     space = [' ', ' ', ' ']
@@ -55,6 +57,7 @@ class AlarmClock < Clock
     hour = @alarm_time.hour
     minute = @alarm_time.min
 
+    # Check hour
     mark = 'a'
     if hour>12
       hour = hour-12
@@ -74,8 +77,10 @@ class AlarmClock < Clock
       find_number hour, the_time
     end
 
+    # Put colon to array
     the_time << colon
 
+    # Check minute
     if minute >=10
       one = minute.to_s[0].to_i
       two = minute.to_s[1].to_i
@@ -98,6 +103,7 @@ class AlarmClock < Clock
 
     str = ''
 
+    # Put time to a string
     t = 0
     while t < 3 do
       the_time.each do |chars|

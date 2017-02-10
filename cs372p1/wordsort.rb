@@ -72,10 +72,12 @@ file = File.new(target_filename, 'r')
 
 str=''
 
+# Read whole content then put to a string
 while (line = file.gets)
   str+=' '+line
 end
 
+# Split str by white space then store to an array
 words = str.split(' ')
 sort_words = []
 
