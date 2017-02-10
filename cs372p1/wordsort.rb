@@ -5,6 +5,10 @@ def insertion_sort(array)
   array
 end
 
+def binary_search
+
+end
+
 target_filename= ARGV[0]
 
 split_filename = target_filename.split('.')

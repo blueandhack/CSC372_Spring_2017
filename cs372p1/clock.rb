@@ -1,4 +1,5 @@
 class Clock
+
   def initialize (hour, minute)
     @time = Time.new 2017, 2, 6, hour, minute
   end
@@ -16,16 +17,12 @@ class Clock
   end
 
   def formattime
-
     the_time = []
 
     am = [' _ ', '|_|', '| |']
     pm = [' _ ', '|_|', '|  ']
     space = [' ', ' ', ' ']
     colon = [' ', '.', '.']
-
-
-    # puts zero, one, two, three, four, five, six, seven, eight, nine, am, pm, space, colon
 
     hour = @time.hour
     minute = @time.min
@@ -34,14 +31,16 @@ class Clock
     if hour>12
       hour = hour-12
       mark = 'p'
+    elsif hour == 12
+      mark = 'p'
     end
 
-    if hour>10
+    if hour>=10
       one = hour.to_s[0].to_i
       two = hour.to_s[1].to_i
 
-      find_number two, the_time
       find_number one, the_time
+      find_number two, the_time
 
     else
       find_number hour, the_time
@@ -49,13 +48,14 @@ class Clock
 
     the_time << colon
 
-    if minute >10
+    if minute >=10
       one = minute.to_s[0].to_i
       two = minute.to_s[1].to_i
 
-      find_number two, the_time
       find_number one, the_time
+      find_number two, the_time
     else
+      find_number 0, the_time
       find_number minute, the_time
     end
 
@@ -66,6 +66,19 @@ class Clock
     else
       the_time << am
     end
+
+    str = ''
+
+    t = 0
+    while t < 3 do
+      the_time.each do |chars|
+        str += chars[t]
+      end
+      str += "\n"
+      t+=1
+    end
+
+    printf '%s', str
 
   end
 

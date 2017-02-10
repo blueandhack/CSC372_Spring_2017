@@ -10,15 +10,15 @@ count_number = 0
 
 begin
   array << number
+  if max < number
+    max = number
+  end
+  count_number = count_number+1
   if number%2 == 0
     number = number/2
   else
     number = number * 3 + 1
   end
-  if max < number
-    max = number
-  end
-  count_number = count_number+1
 end until number == 1
 
 
@@ -35,4 +35,4 @@ end
 
 puts ''
 puts ''
-print "There are #{count_number} values; the largest is #{max}."
+print "There are #{count_number+1} values; the largest is #{max}."
