@@ -27,6 +27,7 @@ if ARGV.length == 1
       end
     end
   end
+  file.close
 else
   # Read user input
   user_input = $stdin.read

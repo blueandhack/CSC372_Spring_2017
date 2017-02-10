@@ -91,3 +91,5 @@ end
 File.open(save_filename, 'w+') do |f|
   f.puts(sort_words)
 end
+
+file.close

@@ -40,6 +40,7 @@ while (line = file.gets)
   i+=1
 end
 
+file.close
 
 total_keys = hash.keys
 
