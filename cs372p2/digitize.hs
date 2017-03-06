@@ -5,7 +5,7 @@ digitize a = do
     let numbers = digitizeHelper a
     let lineOne = getString numbers 0 ++ "\n"
     let lineTwo = getString numbers 1 ++ "\n"
-    let lineThree = getString numbers 2 ++ "\n"
+    let lineThree = getString numbers 2
     lineOne ++ lineTwo ++ lineThree
 
 getString :: [[String]] -> Int -> String
@@ -38,6 +38,7 @@ getOneNumber s
 
 main :: IO ()
 main = do
-    putStr $ digitize "12:56"
-    putStr $ digitize "10:20"
+    putStr $ digitize "12:56" ++ "\n"
+    putStr $ digitize "10:20" ++ "\n"
+    putStr $ digitize "1:2" ++ "\n"
     putStr $ digitize ""
