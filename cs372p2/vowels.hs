@@ -32,5 +32,7 @@ histogramHelper s
 
 main :: IO ()
 main = do
-    print $ vowelListList "Ate\na horse?\nAaa! Ick, ick, ick!\n"
-    print $ vowelHistogram ["aaaaa", "ee", "iii", "o", ""]
+    content <- readFile "vowels.txt"
+    let s = vowelListList content
+    -- print $ vowelListList "Ate\na horse?\nAaa! Ick, ick, ick!\n"
+    putStr $ vowelHistogram s

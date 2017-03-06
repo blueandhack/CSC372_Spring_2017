@@ -15,4 +15,4 @@ vowels: vowels.hs
 	ghc vowels.hs -o vowels
 
 clean:
-	rm -f *.o *.hi mean gcd hailstones
+	rm -f *.o *.hi mean gcd hailstones vowels
