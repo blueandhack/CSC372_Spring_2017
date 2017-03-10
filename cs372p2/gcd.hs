@@ -1,4 +1,3 @@
-
 {- gcd.hs: GCD is greatest common divisor, so the function is ourGCD
 -- that can help us to calculate GCD, we will use recursive to do it.
 -}
@@ -18,7 +17,7 @@ ourGCD x y
         where a = mod x y
 
 
-main :: IO ()
-main = do
-    print $ ourGCD 780 612
-    print $ ourGCD 780 (-612)
+-- main :: IO ()
+-- main = do
+--     print $ ourGCD 780 612
+--     print $ ourGCD 780 (-612)

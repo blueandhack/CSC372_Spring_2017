@@ -31,8 +31,8 @@ insertionSortHelper a b
         insertionSortHelper (tail a) c
 
 
-main :: IO ()
-main = do
-    print $ insertInOrder 4 [1,6,9,12]
-    print $ insertionSort [12,6,1,9,4,15,2]
-    print $ insertionSort []
+-- main :: IO ()
+-- main = do
+--     print $ insertInOrder 4 [1,6,9,12]
+--     print $ insertionSort [12,6,1,9,4,15,2]
+--     print $ insertionSort []

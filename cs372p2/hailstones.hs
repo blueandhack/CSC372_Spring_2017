@@ -21,7 +21,7 @@ helper x
     | otherwise = 3*x+1 : helper (3*x+1)
 
 
-main :: IO ()
-main = do
-    print $ hailstones 9
-    print $ hailstones (-9)
+-- main :: IO ()
+-- main = do
+--     print $ hailstones 9
+--     print $ hailstones (-9)

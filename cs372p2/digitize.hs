@@ -52,12 +52,12 @@ getOneNumber s
     | otherwise = error "The argument contains charachters other than digits and colons"
 
 
-main :: IO ()
-main = do
-    putStr $ digitize "12:56" ++ "\n"
-    print $ digitize "12:56" ++ "\n"
-    putStr $ digitize "10:20" ++ "\n"
-    putStr $ digitize "1:2" ++ "\n"
-    putStr $ digitize ""
-    print $ digitize ""
-    putStr $ digitize "()"
+-- main :: IO ()
+-- main = do
+--     putStr $ digitize "12:56" ++ "\n"
+--     print $ digitize "12:56" ++ "\n"
+--     putStr $ digitize "10:20" ++ "\n"
+--     putStr $ digitize "1:2" ++ "\n"
+--     putStr $ digitize ""
+--     print $ digitize ""
+--     putStr $ digitize "()"

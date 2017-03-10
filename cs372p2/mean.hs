@@ -9,8 +9,8 @@ meanIntList x
     | null x = error "The list is empty"
     | otherwise = fromIntegral(sum x) / fromIntegral(length x)
 
-main :: IO ()
-main = do
-    print $ meanIntList [3,4,8]
-    print $ meanIntList [3,4,5,6,7,7,8,9,45,435,3,23432,4]
-    print $ meanIntList []
+-- main :: IO ()
+-- main = do
+--     print $ meanIntList [3,4,8]
+--     print $ meanIntList [3,4,5,6,7,7,8,9,45,435,3,23432,4]
+--     print $ meanIntList []
