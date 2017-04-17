@@ -5,7 +5,8 @@ elementat(Index, List, Element) :-
 
 elementathelper(Index, [X|_], Element, I) :-
     Index == I,
-    Element = X.
+    Element = X,
+    !.
 
 elementathelper(Index, [_|List], Element, I) :-
     B is I + 1,
