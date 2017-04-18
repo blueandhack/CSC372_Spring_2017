@@ -1,39 +1,31 @@
 % Name: Yujia Lin
-% memberhelper(Subset, List) :-
-%     L1 is 0,
-%     length(Subset, L1),
-%     L1 == 0,
-%     L2 is 0,
-%     length(List, L2),
-%     L2 == 0,
-%     false.
-
 memberhelper([], _).
-    % L1 is 0,
-    % lenght(List, L1),
-    % L1 \== 0.
 
 memberhelper([X|Subset], List) :-
   member(X, List),
-  % member([],[[]]),
+  member([],[[]]),
   memberhelper(Subset, List).
 
+subsetofall(Subset, List) :-
+    length(Subset, L1),
+    % write(L1),nl,
+    not(L1 = 0),
+    length(List, L2),
+    % write(L2),nl,
+    not(L2 = 0),
+    subsetofallhelper(Subset, List).
 
-% subsetofall(Subset, List) :-
-%     L1 is 0,
-%     length(Subset, L1),
-%     L1 == 0,
-%     L2 is 0,
-%     length(List, L2),
-%     L2 == 0,
-%     false.
+subsetofall(Subset, List) :-
+    length(Subset, L1),
+    % write(L1),nl,
+    L1 = 0,
+    length(List, L2),
+    % write(L2),nl,
+    not(L2 = 0),
+    subsetofallhelper(Subset, List).
 
-subsetofall(_, []).
-    % L1 is 0,
-    % length(Subset, L1),
-    % write(L1),
-    % L1 \== 0.
+subsetofallhelper(_, []) :- !.
 
-subsetofall(Subset, [X|List]) :-
-  memberhelper(Subset, X),
-  subsetofall(Subset, List).
+subsetofallhelper(Subset, [X|List]) :-
+    memberhelper(Subset, X),
+    subsetofallhelper(Subset, List).
