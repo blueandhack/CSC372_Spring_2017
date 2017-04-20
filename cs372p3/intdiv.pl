@@ -1,7 +1,8 @@
 % Name: Yujia Lin
 
 intdiv(_, 0, _) :-
-    write('ERROR: intdiv/3: Arithmetic: evaluation error: ‘zero_divisor’').
+    write('ERROR: intdiv/3: Arithmetic: evaluation error: ‘zero_divisor’'),
+    !.
 
 intdiv(Dividend, Divisor, Quotient) :-
     Dividend < Divisor,
