@@ -7,6 +7,13 @@
 % The program has two predicates that are spherearea(radius,area), spherevolume(radius,volume).
 % So, spherearea can calcualte sphere's area.
 % And spherevolume can calcualte sphere's volume.
+%
+% ?- spherearea(5,X).
+% X = 314.1592653589793.
+%
+% ?- spherevolume(5,X).
+% X = 523.5987755982989.
+%
 
 % It takes Radius to get Area, then return Area. So it use formula that is 4 * pi * radius ^ 2.
 spherearea(Radius, Area) :-
@@ -16,5 +23,4 @@ spherearea(Radius, Area) :-
 % becuase it is easy to use formula that is 1/3 * radius * (sphere's area) = sphere's volume.
 spherevolume(Radius, Volume) :-
     spherearea(Radius, Area),
-    Volume is 1/3 * Radius * Area,
-    !.
+    Volume is 1/3 * Radius * Area, !.
