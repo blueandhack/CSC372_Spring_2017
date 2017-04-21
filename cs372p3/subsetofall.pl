@@ -14,19 +14,11 @@
 % false.
 %
 % ?- subsetofall([a],[[],[],[a]]).
-% false.
+% true.
 %
 % ?- subsetofall([],[[],[],[]]).
 % true.
 %
-
-% Baese case for method two: if two lists are empty, then stop.
-memberhelpertwo([], []).
-
-% Check an element in a list by member function
-memberhelpertwo([X|Subset], List) :-
-    member(X, List),
-    memberhelpertwo(Subset, List).
 
 % Baese case: if two lists are empty, then stop.
 memberhelper([], _).
@@ -42,8 +34,7 @@ subsetofall(Subset, List) :-
     not(L1 = 0),
     length(List, L2),
     not(L2 = 0),
-    subsetofallhelper(Subset, List),
-    !.
+    subsetofallhelper(Subset, List), !.
 
 % When first argument is [] but second is not []
 subsetofall(Subset, List) :-
@@ -51,8 +42,7 @@ subsetofall(Subset, List) :-
     L1 =:= 0,
     length(List, L2),
     not(L2 = 0),
-    subsetofallhelpertwo(Subset, List),
-    !.
+    subsetofallhelper(Subset, List), !.
 
 % Base case: if last list is empty, then stop.
 subsetofallhelper(_, []) :- !.
@@ -61,11 +51,3 @@ subsetofallhelper(_, []) :- !.
 subsetofallhelper(Subset, [X|List]) :-
     memberhelper(Subset, X),
     subsetofallhelper(Subset, List).
-
-% Base case for method two: if last list is empty, then stop.
-subsetofallhelpertwo(_, []) :- !.
-
-% Check an set in an element of set
-subsetofallhelpertwo(Subset, [X|List]) :-
-    memberhelpertwo(Subset, X),
-    subsetofallhelpertwo(Subset, List).
