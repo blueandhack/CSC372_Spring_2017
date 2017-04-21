@@ -1,4 +1,8 @@
+% printlist.pl
 % Name: Yujia Lin
+% TAs' name: Andrea Padula, Patrick Hickey
+% Program 03
+% ----------
 
 print135([]).
 
@@ -8,6 +12,7 @@ print135(List) :-
 
 printhelper([], _).
 
+% When
 printhelper([X|List], Index) :-
     Index =:= 1,
     write(X),nl,

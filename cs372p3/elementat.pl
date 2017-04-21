@@ -1,4 +1,8 @@
+% elementat.pl
 % Name: Yujia Lin
+% TAs' name: Andrea Padula, Patrick Hickey
+% Program 03
+% ----------
 
 elementat(Index, List, Element) :-
     elementathelper(Index, List, Element, 0).

@@ -1,4 +1,9 @@
+% subsetofall.pl
 % Name: Yujia Lin
+% TAs' name: Andrea Padula, Patrick Hickey
+% Program 03
+% ----------
+% 7. A subset of all sets?
 
 % two
 memberhelpertwo([], []).
@@ -14,7 +19,7 @@ memberhelper([X|Subset], List) :-
     member(X, List),
     memberhelper(Subset, List).
 
-% when first argument is [] and second also is []
+% When first argument is [] and second also is []
 subsetofall(Subset, List) :-
     length(Subset, L1),
     not(L1 = 0),
@@ -23,7 +28,7 @@ subsetofall(Subset, List) :-
     subsetofallhelper(Subset, List),
     !.
 
-% when first argument is [] but second is not []
+% When first argument is [] but second is not []
 subsetofall(Subset, List) :-
     length(Subset, L1),
     L1 = 0,

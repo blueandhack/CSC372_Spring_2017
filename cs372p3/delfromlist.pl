@@ -1,4 +1,8 @@
+% delfromlist.pl
 % Name: Yujia Lin
+% TAs' name: Andrea Padula, Patrick Hickey
+% Program 03
+% ----------
 
 delfromlist(_, [], []) :- !.
 
